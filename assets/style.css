@@ -170,7 +170,6 @@ box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);box-shadow: 0px 4px 15px rgba(0, 0,
   width: 100%;
   font-weight:700;
 }
-
 .btn{
   background: #F7F7F7;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
@@ -337,18 +336,17 @@ right:20px;
 /*footer*/
 footer {
   background: rgba(53, 53, 53, 1);
-  display: flex;
+  display:flex;
   flex-direction: column;
   justify-content:center;
   width: 100%;
   padding-top:20px;
 }
-
 footer h5 , footer h4{
   font-family: Shrikhand;
   color: white;
   font-size: 18px;
-  padding-left: 20px;
+  padding-left: 40px;
   padding-bottom: 20px;
   font-style: italic;
 }
@@ -373,8 +371,7 @@ footer a {
 }
 
 .link {
-  display: flex;
-  flex-direction: column;
+  display:flex;
   padding-left:20px;
   gap: 10px;
 }
@@ -407,22 +404,23 @@ header a
   align-items:center;
   margin:auto;
 }
-
-/*partie main*/
-
 .img_delice
 {
-  width: 375px;
-height: 275px;
+ height: 275px;
   width:100%;
+  position:absolute;
+  z-index: -1;
+  top: 79px;
 }
+
+/*partie main*/
 .align_titre
 {
   display:flex;
   justify-content:space-between;
   width:100%;
  }
-.like2
+.choisir .like2
 {
   position:relative;
 }
@@ -434,7 +432,16 @@ display:flex;
   font-size:21px;
   padding-right:25px;
   padding-top:30px;
+ transition: all 300ms;
   }
+.like2 .fa-regular
+{
+ opacity:1;
+}
+.like2:hover .fa-regular 
+{
+ opacity:0;
+}
 .like2 .fa-solid
 {
   position:absolute;
@@ -442,25 +449,23 @@ display:flex;
   top:0px;
   font-size:22px;
  background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
- background-clip: text;
   -webkit-background-clip: text;color: transparent;
-  cursor:pointer;
   opacity:0;
 }
-.like2 .fa-solid:hover
+.like2:hover .fa-solid 
 {
   opacity:1;
 }
-.choisir
+section.choisir
 {
   display:flex;
   flex-direction:column;
   background: #F7F7F7;
- height:1050px;
  border-radius:40px 40px 0px 0px;
- position:relative;
-  top:-55px;
- }
+ margin-top:240px;
+  padding-bottom:30px;
+}
+
 .choisir h2
 {
   font-family: Shrikhand;
@@ -473,8 +478,20 @@ display:flex;
 .entre , .plats , .desserts
 { display:flex;
  flex-direction:column;
-  
+  animation:block 3000ms forwards;
 }
+ @keyframes block
+{
+ 0%{
+  transform:translatex(150px);
+  opacity:0;
+ }
+ 100%{
+  transform:translatex(-10px);
+  opacity:1;
+ }
+}
+
 .entre h3, .plats h3 , .desserts h3
 {
   font-weight:normal;
@@ -486,19 +503,8 @@ display:flex;
   width:40px;
   margin-left:20px;
   padding-top:25px;
- animation:h3 3000ms ;
 }
-@keyframes h3
-{
- 0%{
-  transform:translatex(150px);
-  opacity:0;
- }
- 100%{
-  transform:translatex(-10px);
-  opacity:1;
- }
-}
+
 .row
 {
 display:flex;
@@ -520,19 +526,18 @@ justify-content:space-between;
    font-size:15px; 
   padding-left:5px;
   cursor:pointer;
- animation:choix 3000ms 200ms;
+animation:block 3000ms;
 }
-@keyframes choix 
+.choix:nth-child(2){
+ animation-delay: 0.5s;
+}
+.choix:nth-child(3)
 {
- 0%
- {
-   transform:translatex(180px);
-  opacity:0;
- }
- 100%{
-  transform:translatex(-5px);
-  opacity:1;
- }
+ animation-delay: 1s;
+}
+.choix:nth-child(4)
+{
+ animation-delay: 1.5s;
 }
  .fa-check
 {
@@ -595,7 +600,8 @@ border-radius: 25px;
   align-items:center;
   text-align:center;
   height: 50px;
-width: 52%;
+  padding-left:35px;
+ padding-right:35px;
 left: 0px;
 top: 50px;
 border-radius: 25px;
@@ -605,18 +611,8 @@ border-radius: 25px;
   }
 .btn_commande:hover
 {
-box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
+box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
  background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
-}
-
-/*footer*/
-.footer_menu
-{
-  position:relative;
-  top:-55px;
-}
-footer{
-  padding-bottom:30px;
 }
 
 /*cest la version tablette*/
@@ -626,12 +622,7 @@ footer{
     font-size:40px;
     font-weight:700;
   }
-  
-  .btn_fonctionnement {
-    display:flex;
-  }
-  
-  .fonctionnement 
+   .fonctionnement 
   {
     width:85%;
     display:flex;
@@ -640,9 +631,16 @@ footer{
   }
  .btn_fonctionnement
 {
- gap:30px;
- width:92%;
+ display:flex;
+ flex-direction:column;
+ justify-content:center;
+ align-items:center;
+ width:100%;
 }
+ .btn
+ {
+  width:70%;
+ }
   .align_menu
   {
      width:85%;
@@ -670,12 +668,12 @@ footer{
     align-items:center;
     margin:auto;
   }
-  .img_delice
-  {
-    object-fit:cover;
-
-  }
-
+.img_delice{
+  object-fit:cover;
+  height:450px;
+ max-width:1440px;
+ }
+ 
   .align_page
   {
     width:85%;
@@ -684,18 +682,19 @@ footer{
     justify-content:center;
     margin:auto;
   }
+
   .align_titre
   {
     display:flex;
     justify-content:space-evenly;
-    
-  }
-  .choisir
+     }
+  section.choisir
   {
     width:70%;
     display:flex;
     justify-content:center;
     margin:auto;
+   margin-top:439px;
   }
   
   footer
@@ -703,33 +702,43 @@ footer{
     display:flex;
     flex-direction:row-reverse;
    padding-top:40px;
-    padding-bottom:0px;
-  }
+   justify-content:end;
+     padding-right:90px;} 
+
  .align_footer 
   {
     display:flex;
     flex-direction:row;
      }
+ 
   .partenaire
   {
     padding-right:40px;
   }
-  
  .link {
   padding-left:10px;
+  margin-right:30px;
 }
-  /*partie restaurant */
-  .img_delice
-  {
-    height:350px;
-  }
-
 }
-
 /*cest la version desktop*/
 @media screen and ( min-width:1025px)
 {
-  
+    .btn_fonctionnement {
+    display:flex;
+    flex-direction:row;
+  }
+  .fonctionnement 
+  {
+    width:85%;
+    display:flex;
+    justify-content:center;
+    margin:auto;
+  }
+ .btn_fonctionnement
+{
+ gap:30px;
+ width:92%;
+}
 /*page restaurant*/
   .logo
   {
@@ -738,19 +747,10 @@ footer{
     align-items:center;
     margin:auto;
   }
-  .img_delice
-  {
-    object-fit:cover;
-
-  }
   .choisir
   {
     width:70%;
     display:flex;
     justify-content:center;
     margin:auto;
-  }
-
-}
-
- 
+  }}
