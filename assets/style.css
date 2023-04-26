@@ -30,16 +30,16 @@ position: fixed;
  background:black;
  border-radius:50%;
  margin:0 15px;
- animation:ball 1.5s infinite;
+ animation:ball 0.8s infinite 0.3s;
  position:relative;
 }
 .b2
 {
-  animation-delay:0.05s;
+  animation-delay:0.6s;
 }
 .b3
 {
-  animation-delay:1s;
+  animation-delay:0.9s;
 }
 
 @keyframes ball
@@ -307,19 +307,23 @@ right:20px;
 .like1 .fa-heart
 {
   background:white;
+ opacity:1;
+ 
+}
+.like1:hover .fa-heart{
+ opacity:0;
 }
 .like1 .fa-solid
 {
  position:absolute;
  top:0px;
- font-size:22px;
  background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
  background-clip: text;
   -webkit-background-clip: text;color: transparent;
   cursor:pointer;
   opacity:0;
 }
-.like1 .fa-solid:hover{
+.like1:hover .fa-solid{
   opacity:1;
 }
 .restaurant a {
@@ -432,7 +436,7 @@ display:flex;
   font-size:21px;
   padding-right:25px;
   padding-top:30px;
- transition: all 300ms;
+ transition: all 500ms;
   }
 .like2 .fa-regular
 {
@@ -447,7 +451,6 @@ display:flex;
   position:absolute;
   right:0px;
   top:0px;
-  font-size:22px;
  background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
   -webkit-background-clip: text;color: transparent;
   opacity:0;
