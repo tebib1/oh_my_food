@@ -589,6 +589,12 @@ animation:block 5s;
   width:60px;
   opacity:1;
 }
+.column h4 , .column p
+{
+ text-overflow: ellipsis;
+overflow: hidden;
+white-space: nowrap;
+}
 h4{font-weight: 500;
 font-weight:bold;
 font-size:18px;
